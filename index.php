@@ -159,7 +159,7 @@ include 'includes/sidebar.php';
                                     <td><?= h($pagu['nama_pagu']) ?></td>
                                     <td><span class="text-nowrap"><i class="bi bi-building text-muted"></i> <?= h($pagu['nama_unit']) ?></span></td>
                                     <td><span class="badge bg-info"><?= h($pagu['nama_jenis']) ?></span></td>
-                                    <td class="text-end"><?= format_rupiah($pagu['total_program']) ?></td>
+                                    <td class="text-end"><?= format_rupiah($pagu['sum_total_program']) ?></td>
                                     <td class="text-end"><strong class="text-success"><?= format_rupiah($pagu['nominal_pagu']) ?></strong></td>
                                     <td>
                                         <div class="btn-group btn-group-sm">

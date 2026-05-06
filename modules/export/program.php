@@ -14,7 +14,7 @@ $query = "SELECT pp.*, pa.judul_kegiatan, pa.nama_pagu, up.nama_unit, jp.nama_je
           FROM program_pagu pp
           JOIN pagu_anggaran pa ON pp.pagu_id = pa.id
           JOIN unit_pelaksana up ON pa.unit_id = up.id
-          JOIN jenis_pagu jp ON pa.jenis_pagu_id = jp.id
+          JOIN jenis_pagu jp ON pa.jenis_id = jp.id
           WHERE pp.id = $program_id";
 
 if (!is_admin()) $query .= " AND pa.created_by = " . get_user_id();

@@ -24,7 +24,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['save_jenis'])) {
 }
 
 if ($action === 'delete' && $id > 0) {
-    $count = is_data_used('pagu_anggaran', 'jenis_pagu_id', $id);
+    $count = is_data_used('pagu_anggaran', 'jenis_id', $id);
     if ($count > 0) {
         safe_redirect("master_data.php?tab=jenis&msg=cannot_delete&count=$count");
     }

@@ -68,10 +68,10 @@ function get_pagu_by_id($id)
 function get_all_pagu()
 {
     $query = "SELECT pa.*, up.nama_unit, jp.nama_jenis,
-              (SELECT COALESCE(SUM(total_program), 0) FROM program_pagu WHERE pagu_id = pa.id) as total_program
+              (SELECT COALESCE(SUM(total_program), 0) FROM program_pagu WHERE pagu_id = pa.id) as sum_total_program
               FROM pagu_anggaran pa
               JOIN unit_pelaksana up ON pa.unit_id = up.id
-              JOIN jenis_pagu jp ON pa.jenis_pagu_id = jp.id";
+              JOIN jenis_pagu jp ON pa.jenis_id = jp.id";
 
     if (!is_admin()) {
         $query .= " WHERE pa.created_by = ?";
